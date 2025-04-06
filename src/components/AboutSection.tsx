@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { version } from '../../package.json';
 
 export function AboutSection() {
   const { t } = useTranslation();
@@ -56,7 +57,7 @@ export function AboutSection() {
           </div>
 
           <div className="flex items-center space-x-2 text-sm text-gray-500">
-            <span>{t('about.version')} 1.0.0</span>
+            <span>{t('about.version')} {version}</span>
             <span>•</span>
             <span>{t('about.contact')}</span>
           </div>
