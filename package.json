@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "release": "semantic-release --no-ci",
-    "changelog": "semantic-release --no-ci --debug --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/changelog"
+    "changelog": "semantic-release --no-ci --debug --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/changelog",
+    "prepare": "husky && husky install",
+    "test": "echo 'No tests configured yet'"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.3",
@@ -25,7 +27,14 @@
     "tailwind-merge": "^3.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.21.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^11.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@tailwindcss/postcss": "^4.1.3",
     "@tailwindcss/vite": "^4.1.3",
     "@types/react": "^19.0.10",
@@ -36,17 +45,13 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "husky": "^8.0.0",
     "postcss": "^8.5.3",
+    "semantic-release": "^22.0.7",
     "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.1.3",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
-    "vite": "^6.2.0",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/commit-analyzer": "^9.0.2",
-    "@semantic-release/release-notes-generator": "^10.0.3",
-    "semantic-release": "^22.0.7",
-    "@semantic-release/npm": "^11.0.2"
+    "vite": "^6.2.0"
   }
 }
