@@ -1,5 +1,6 @@
 import { useCalculation } from '../hooks/useCalculation';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface TimeBreakdown {
   months: number;
@@ -15,11 +16,12 @@ function formatTimeUnit(value: number, singular: string, plural: string): string
 }
 
 function TimeBreakdown({ breakdown }: { breakdown: TimeBreakdown }) {
+  const { t } = useTranslation();
   const units = [
-    { value: breakdown.months, singular: 'mês', plural: 'meses' },
-    { value: breakdown.weeks, singular: 'semana', plural: 'semanas' },
-    { value: breakdown.days, singular: 'dia', plural: 'dias' },
-    { value: breakdown.hours, singular: 'hora', plural: 'horas' }
+    { value: breakdown.months, singular: t('timeUnits.month'), plural: t('timeUnits.months') },
+    { value: breakdown.weeks, singular: t('timeUnits.week'), plural: t('timeUnits.weeks') },
+    { value: breakdown.days, singular: t('timeUnits.day'), plural: t('timeUnits.days') },
+    { value: breakdown.hours, singular: t('timeUnits.hour'), plural: t('timeUnits.hours') }
   ];
 
   const formattedUnits = units
@@ -30,7 +32,7 @@ function TimeBreakdown({ breakdown }: { breakdown: TimeBreakdown }) {
 
   return (
     <div className="mt-4 pt-4 border-t border-gray-700">
-      <h4 className="text-sm font-medium text-white mb-2">Equivalência em outras unidades:</h4>
+      <h4 className="text-sm font-medium text-white mb-2">{t('result.timeEquivalence')}:</h4>
       <div className="flex flex-wrap gap-1">
         {formattedUnits.map((text, index, array) => (
           <span key={index}>
@@ -45,6 +47,7 @@ function TimeBreakdown({ breakdown }: { breakdown: TimeBreakdown }) {
 
 export function ResultCard() {
   const { result } = useCalculation();
+  const { t } = useTranslation();
 
   if (!result) return null;
 
@@ -62,27 +65,27 @@ export function ResultCard() {
           }}
           className="bg-gray-800 rounded-lg p-6 shadow-[0_8px_30px_rgb(0,0,0,0.3)]"
         >
-          <h2 className="text-2xl font-bold text-white mb-4">Resultado</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">{t('result.title')}</h2>
           
           <div className="space-y-4">
             <div>
-              <p className="text-gray-400">Tempo total:</p>
+              <p className="text-gray-400">{t('result.totalTime')}:</p>
               <p className="text-xl font-semibold text-white">{result.formattedTime}</p>
             </div>
 
             <div>
-              <p className="text-gray-400">Valor total:</p>
+              <p className="text-gray-400">{t('result.totalValue')}:</p>
               <p className="text-3xl font-bold text-blue-400">{result.formattedValue}</p>
             </div>
 
             <div className="mt-6 pt-6 border-t border-gray-700">
-              <h3 className="text-lg font-semibold text-white mb-3">Detalhes do cálculo</h3>
+              <h3 className="text-lg font-semibold text-white mb-3">{t('result.calculationDetails')}</h3>
               
               <div className="space-y-2 text-sm text-gray-400">
-                <p>Horas: {result.calculationSteps.hours}h</p>
-                <p>Minutos: {result.calculationSteps.minutes}min ({result.calculationSteps.decimalMinutes.toFixed(4)}h)</p>
-                <p>Segundos: {result.calculationSteps.seconds}s ({result.calculationSteps.decimalSeconds.toFixed(4)}h)</p>
-                <p className="font-medium text-white">Total em horas decimais: {result.decimalHours.toFixed(4)}h</p>
+                <p>{t('result.hours')}: {result.calculationSteps.hours}h</p>
+                <p>{t('result.minutes')}: {result.calculationSteps.minutes}min ({result.calculationSteps.decimalMinutes.toFixed(4)}h)</p>
+                <p>{t('result.seconds')}: {result.calculationSteps.seconds}s ({result.calculationSteps.decimalSeconds.toFixed(4)}h)</p>
+                <p className="font-medium text-white">{t('result.decimalHours')}: {result.decimalHours.toFixed(4)}h</p>
                 
                 <TimeBreakdown breakdown={result.timeBreakdown} />
               </div>

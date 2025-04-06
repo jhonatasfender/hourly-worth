@@ -1,8 +1,10 @@
 import { useFormContext } from 'react-hook-form';
 import { currencies } from '../constants/currencies';
+import { useTranslation } from 'react-i18next';
 
 export function HourlyRateInput() {
   const { register, watch, formState: { errors } } = useFormContext();
+  const { t } = useTranslation();
   const currency = watch('currency') || 'BRL';
 
   const selectedCurrency = currencies.find(c => c.code === currency);
@@ -15,20 +17,20 @@ export function HourlyRateInput() {
 
   return (
     <div className="space-y-2">
-      <label className="text-gray-300 text-sm font-medium">Valor da Hora</label>
+      <label className="text-gray-300 text-sm font-medium">{t('form.hourlyRate.label')}</label>
       <div>
         <input
           type="text"
           placeholder={formatter.format(0)}
           className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
           {...register('hourlyRate', {
-            required: 'Valor da hora é obrigatório',
+            required: t('form.hourlyRate.error.required'),
             pattern: {
               value: /^\d+(\.\d{1,2})?$/,
-              message: 'Use apenas números e até 2 casas decimais'
+              message: t('form.hourlyRate.error.format')
             },
             validate: {
-              positive: (value) => Number(value) > 0 || 'O valor deve ser maior que zero'
+              positive: (value) => Number(value) > 0 || t('form.hourlyRate.error.positive')
             },
             onChange: (e) => {
               const value = e.target.value.replace(/[^\d.]/g, '');

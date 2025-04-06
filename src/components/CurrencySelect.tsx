@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import { useFormContext } from 'react-hook-form';
 import { currencies } from '../constants/currencies';
+import { useTranslation } from 'react-i18next';
 
 export function CurrencySelect() {
   const { register } = useFormContext();
+  const { t } = useTranslation();
 
   return (
     <div className="space-y-2">
-      <label className="text-gray-300 text-sm font-medium">Moeda</label>
+      <label className="text-gray-300 text-sm font-medium">{t('form.currency.label')}</label>
       <motion.div 
         whileHover={{ }}
         whileTap={{ }}

@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "Calculadora de Valor Hora",
+    "calculate": "Calcular"
+  },
+  "form": {
+    "time": {
+      "label": "Tempo Trabalhado",
+      "placeholder": "HH:MM:SS",
+      "error": {
+        "required": "Tempo é obrigatório",
+        "format": "Use o formato HH:MM:SS (ex: 143:30:00)"
+      }
+    },
+    "currency": {
+      "label": "Moeda"
+    },
+    "hourlyRate": {
+      "label": "Valor da Hora",
+      "error": {
+        "required": "Valor da hora é obrigatório",
+        "format": "Use apenas números e até 2 casas decimais",
+        "positive": "O valor deve ser maior que zero"
+      }
+    }
+  },
+  "result": {
+    "title": "Resultado",
+    "totalTime": "Tempo total",
+    "totalValue": "Valor total",
+    "calculationDetails": "Detalhes do cálculo",
+    "hours": "Horas",
+    "minutes": "Minutos",
+    "seconds": "Segundos",
+    "decimalHours": "Total em horas decimais",
+    "timeEquivalence": "Equivalência em outras unidades"
+  },
+  "timeUnits": {
+    "month": "mês",
+    "months": "meses",
+    "week": "semana",
+    "weeks": "semanas",
+    "day": "dia",
+    "days": "dias",
+    "hour": "hora",
+    "hours": "horas"
+  },
+  "about": {
+    "title": "Sobre",
+    "description": "Calculadora de Valor Hora é uma ferramenta simples para calcular o valor total de horas trabalhadas. Basta inserir o tempo trabalhado e o valor da hora, e a calculadora fará o resto!",
+    "version": "Versão",
+    "contact": "Entre em contato para sugestões ou reportar bugs"
+  }
+} 

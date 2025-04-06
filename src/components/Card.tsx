@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 import { useCalculation } from '../hooks/useCalculation';
 import { twMerge } from 'tailwind-merge';
+import { LanguageMenu } from './LanguageMenu';
+import { AboutSection } from './AboutSection';
 
 interface CardProps {
   children: ReactNode;
@@ -28,11 +30,13 @@ export function Card({ children, className = '' }: CardProps) {
         }}
         className={style}
       >
+        <LanguageMenu />
         <div className="w-full">
           <div
             className={`bg-gray-800 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.3)] p-6 md:p-8 space-y-4 md:space-y-6 backdrop-blur-sm ${className}`}
           >
             {children}
+            <AboutSection />
           </div>
         </div>
       </motion.div>

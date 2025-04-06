@@ -1,0 +1,54 @@
+{
+  "app": {
+    "title": "Hourly Worth Calculator",
+    "calculate": "Calculate"
+  },
+  "form": {
+    "time": {
+      "label": "Worked Time",
+      "placeholder": "HH:MM:SS",
+      "error": {
+        "required": "Time is required",
+        "format": "Use the format HH:MM:SS (ex: 143:30:00)"
+      }
+    },
+    "currency": {
+      "label": "Currency"
+    },
+    "hourlyRate": {
+      "label": "Hourly Rate",
+      "error": {
+        "required": "Hourly rate is required",
+        "format": "Use only numbers and up to 2 decimal places",
+        "positive": "Value must be greater than zero"
+      }
+    }
+  },
+  "result": {
+    "title": "Result",
+    "totalTime": "Total time",
+    "totalValue": "Total value",
+    "calculationDetails": "Calculation details",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "decimalHours": "Total in decimal hours",
+    "timeEquivalence": "Equivalence in other units"
+  },
+  "timeUnits": {
+    "month": "month",
+    "months": "months",
+    "week": "week",
+    "weeks": "weeks",
+    "day": "day",
+    "days": "days",
+    "hour": "hour",
+    "hours": "hours"
+  },
+  "about": {
+    "title": "About",
+    "description": "Hourly Worth Calculator is a simple tool to calculate the total value of worked hours. Just enter the worked time and hourly rate, and the calculator will do the rest!",
+    "version": "Version",
+    "contact": "Contact me for suggestions or bug reports"
+  }
+} 

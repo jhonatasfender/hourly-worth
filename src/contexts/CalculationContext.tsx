@@ -12,7 +12,7 @@ interface TimeBreakdown {
   seconds: number;
 }
 
-interface CalculationContextData {
+export interface CalculationContextData {
   time: string;
   hourlyRate: string;
   currency: string;
