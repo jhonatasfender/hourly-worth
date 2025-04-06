@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "release": "semantic-release --no-ci",
-    "changelog": "semantic-release --no-ci --dry-run --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/changelog"
+    "changelog": "semantic-release --no-ci --debug --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/changelog"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.3",
