@@ -14,8 +14,9 @@
     "deployment": {
       "platform": "GitHub Pages",
       "url": "https://jonatas.github.io/hourly-worth",
-      "build_command": "pnpm run build",
-      "deploy_command": "pnpm run deploy"
+      "build_command": "npm run build",
+      "deploy_command": "npx gh-pages -d dist",
+      "predeploy_command": "npm run build"
     },
     "changelog": {
       "generator": "semantic-release",
@@ -48,7 +49,11 @@
             "revert"
           ],
           "max_length": 500,
-          "case": "lower-case"
+          "case": {
+            "type": "lower-case",
+            "scope": "lower-case",
+            "subject": "any-case"
+          }
         }
       },
       "eslint": {
