@@ -10,5 +10,10 @@ export default defineConfig({
   ],
   json: {
     stringify: true
+  },
+  base: '/hourly-worth/',
+  build: {
+    outDir: 'dist',
+    sourcemap: true,
   }
 })

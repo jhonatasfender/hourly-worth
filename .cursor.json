@@ -10,6 +10,12 @@
       "library": "react-i18next",
       "languages": ["pt-BR", "en-US"],
       "default_language": "pt-BR"
+    },
+    "deployment": {
+      "platform": "GitHub Pages",
+      "url": "https://jonatas.github.io/hourly-worth",
+      "build_command": "pnpm run build",
+      "deploy_command": "pnpm run deploy"
     }
   },
   "configuration_files": {

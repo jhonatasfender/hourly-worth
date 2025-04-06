@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.1.1",
   "type": "module",
+  "homepage": "https://jonatas.github.io/hourly-worth",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -11,7 +12,9 @@
     "release": "semantic-release --no-ci",
     "changelog": "semantic-release --no-ci --debug --plugins @semantic-release/commit-analyzer,@semantic-release/release-notes-generator,@semantic-release/changelog",
     "prepare": "husky && husky install",
-    "test": "echo 'No tests configured yet'"
+    "test": "echo 'No tests configured yet'",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.3",
@@ -44,6 +47,7 @@
     "eslint": "^9.21.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.3.0",
     "globals": "^15.15.0",
     "husky": "^8.0.0",
     "postcss": "^8.5.3",
