@@ -16,6 +16,65 @@
       "url": "https://jonatas.github.io/hourly-worth",
       "build_command": "pnpm run build",
       "deploy_command": "pnpm run deploy"
+    },
+    "changelog": {
+      "generator": "semantic-release",
+      "preset": "angular",
+      "sections": [
+        "Features",
+        "Bug Fixes",
+        "Documentation",
+        "Styles",
+        "Code Refactoring",
+        "Performance Improvements",
+        "Tests",
+        "Chores"
+      ]
+    },
+    "lint": {
+      "commitlint": {
+        "extends": "@commitlint/config-conventional",
+        "rules": {
+          "type-enum": [
+            "feat",
+            "fix",
+            "docs",
+            "style",
+            "refactor",
+            "perf",
+            "test",
+            "chore",
+            "ci",
+            "revert"
+          ],
+          "max_length": 500,
+          "case": "lower-case"
+        }
+      },
+      "eslint": {
+        "extends": ["@eslint/js", "typescript-eslint"],
+        "plugins": ["react-hooks", "react-refresh"],
+        "rules": {
+          "typescript": {
+            "ecmaVersion": 2020,
+            "globals": "browser"
+          },
+          "javascript": {
+            "ecmaVersion": 2020,
+            "globals": "node",
+            "no-console": "warn",
+            "no-unused-vars": "warn"
+          },
+          "json": {
+            "ecmaVersion": 2020,
+            "no-unused-expressions": "off"
+          },
+          "markdown": {
+            "ecmaVersion": 2020,
+            "no-unused-expressions": "off"
+          }
+        }
+      }
     }
   },
   "configuration_files": {

@@ -5,7 +5,30 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  { 
+    ignores: [
+      'dist',
+      '**/*.json',
+      '**/*.md',
+      '**/*.yml',
+      '**/*.yaml',
+      '**/*.html',
+      '**/*.css',
+      '**/*.scss',
+      '**/*.sass',
+      '**/*.less',
+      '**/*.svg',
+      '**/*.png',
+      '**/*.jpg',
+      '**/*.jpeg',
+      '**/*.gif',
+      '**/*.ico',
+      '**/*.woff',
+      '**/*.woff2',
+      '**/*.ttf',
+      '**/*.eot'
+    ]
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -25,4 +48,15 @@ export default tseslint.config(
       ],
     },
   },
+  {
+    files: ['**/*.{js,jsx}'],
+    languageOptions: {
+      ecmaVersion: 2020,
+      globals: globals.node,
+    },
+    rules: {
+      'no-console': 'warn',
+      'no-unused-vars': 'warn',
+    },
+  }
 )
