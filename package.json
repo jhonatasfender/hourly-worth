@@ -14,7 +14,7 @@
     "prepare": "husky && husky install",
     "test": "echo 'No tests configured yet'",
     "predeploy": "npm run build",
-    "deploy": "npx gh-pages -d dist"
+    "deploy": "rm -rf node_modules/.cache/gh-pages && npx gh-pages --dist dist --branch gh-pages"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.13.3",
